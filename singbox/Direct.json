@@ -2,27 +2,28 @@
   "version": 1,
   "rules": [
     {
-      "domain": [
-        "weixinsxy.com",
-        "wxapp.tc.qq.com"
-      ]
-    },
-    {
       "domain_suffix": [
-        ".weixinsxy.com",
-        ".wxapp.tc.qq.com"
+        "hdsky.me",
+        "m-team.cc",
+        "ptchdbits.co",
+        "totheglory.im",
+        "ourbits.club",
+        "springsunday.net",
+        "pterclub.com",
+        "keepfrds.com",
+        "audiences.me",
+        "hhanclub.top",
+        "hdhome.org",
+        "hd4fans.org",
+        "btschool.club",
+        "open.cd"
       ]
     },
     {
-      "domain_keyword": [
-        "cherrytv",
-        "cherr"
-      ]
-    },
-    {
-      "ip_cidr": [
-        "129.226.3.47/32",
-        "162.62.163.63/32"
+      "src_port": [
+        "32516",
+        "26881",
+        "51413"
       ]
     }
   ]
