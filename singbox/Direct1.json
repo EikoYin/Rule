@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        ".hdsky.me",
+        ".m-team.cc",
+        ".ptchdbits.co",
+        ".totheglory.im",
+        ".ourbits.club",
+        ".springsunday.net",
+        ".pterclub.com",
+        ".keepfrds.com",
+        ".audiences.me",
+        ".hhanclub.top",
+        ".hdhome.org",
+        ".hd4fans.org",
+        ".open.cd",
+        ".eikoyin.top"
+      ]
+    },
+    {
+      "source_port": [
+        32516,
+        26881,
+        51413
+      ]
+    }
+  ]
+}
