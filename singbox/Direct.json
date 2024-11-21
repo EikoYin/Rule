@@ -3,19 +3,20 @@
   "rules": [
     {
       "domain_suffix": [
-        "hdsky.me",
-        "m-team.cc",
-        "ptchdbits.co",
-        "totheglory.im",
-        "ourbits.club",
-        "springsunday.net",
-        "pterclub.com",
-        "keepfrds.com",
-        "audiences.me",
-        "hdhome.org",
-        "hd4fans.org",
-        "open.cd",
-        "eikoyin.top"
+        ".hdsky.me",
+        ".m-team.cc",
+        ".ptchdbits.co",
+        ".totheglory.im",
+        ".ourbits.club",
+        ".springsunday.net",
+        ".pterclub.com",
+        ".keepfrds.com",
+        ".audiences.me",
+        ".hhanclub.top",
+        ".hdhome.org",
+        ".hd4fans.org",
+        ".open.cd",
+        ".eikoyin.top"
       ]
     },
     {
