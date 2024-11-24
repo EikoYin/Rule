@@ -17,11 +17,6 @@
         ".open.cd",
         ".eikoyin.top"
       ]
-    },
-    {
-      "source_port": [
-        51413
-      ]
     }
   ]
 }
