@@ -3,8 +3,8 @@
   "rules": [
     {
       "domain_suffix": [
-        ".hdsky.me",
-        ".m-team.cc",
+        "hdsky.me",
+        "m-team.cc",
         ".ptchdbits.co",
         ".totheglory.im",
         ".ourbits.club",
