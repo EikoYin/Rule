@@ -2,56 +2,8 @@
   "version": 1,
   "rules": [
     {
-      "domain": [
-        "tracker.hdsky.me",
-        "tracker.m-team.cc",
-        "tracker.ptchdbits.co",
-        "chdbits.xyz",
-        "tracker.rainbowisland.co",
-        "tracker.totheglory.im",
-        "ourbits.club",
-        "on.springsunday.net",
-        "tracker.pterclub.com",
-        "tracker.keepfrds.com",
-        "t.audiences.me",
-        "tracker.cinefiles.info",
-        "tracker.hhanclub.top",
-        "t.hdhome.org",
-        "tracker.open.cd"
-      ]
-    },
-    {
       "domain_suffix": [
-        ".hdsky.me",
-        ".m-team.cc",
-        ".ptchdbits.co",
-        ".chdbits.xyz",
-        ".rainbowisland.co",
-        ".totheglory.im",
-        ".ourbits.club",
-        ".springsunday.net",
-        ".pterclub.com",
-        ".keepfrds.com",
-        ".audiences.me",
-        ".cinefiles.info",
-        ".hhanclub.top",
-        ".hdhome.org",
-        ".open.cd",
         ".eikoyin.top"
-      ]
-    },
-    {
-      "source_port": [
-        32516,
-        26881,
-        51413
-      ]
-    },
-    {
-      "port": [
-        32516,
-        26881,
-        51413
       ]
     }
   ]
