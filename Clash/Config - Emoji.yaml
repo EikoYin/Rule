@@ -21,6 +21,7 @@ mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
 bind-address: "*"
+authentication: []
 ipv6: true
 unified-delay: true
 tcp-concurrent: true
