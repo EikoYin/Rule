@@ -55,7 +55,7 @@ sniffer:
   force-domain:
     - "+.v2ex.com"
   skip-domain:
-    - "rule-set:private_domain,cn_domain,speedtest_domain,steam@cn_domain,nintendo@cn_domain,xbox@cn_domain,google@cn_domain,microsoft@cn_domain,apple@cn_domain"
+    - "+.baidu.com"
 
 # 入站  
 tun:
