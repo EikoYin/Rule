@@ -21,8 +21,7 @@
     }
   },
 
- "dns": 
- {
+ "dns": {
    "servers": [
      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
      {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "detour": "✅ Static"}
@@ -91,8 +90,7 @@
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
   ],
   
-  "route": 
- {
+  "route": {
    "auto_detect_interface": true,
    "final": "🐟 Final",
    "rules": [
