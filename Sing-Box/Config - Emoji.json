@@ -23,13 +23,11 @@
 
  "dns": 
  {
-   "servers": 
-   [
+   "servers": [
      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
      {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "detour": "✅ Static"}
    ],
-   "rules": 
-   [
+   "rules": [
      {"outbound": "any", "server": "LocalDNS", "disable_cache": true},
      {"clash_mode": "Direct", "server": "LocalDNS"},
      {"clash_mode": "Global", "server": "ProxyDNS"},
@@ -97,8 +95,7 @@
  {
    "auto_detect_interface": true,
    "final": "🐟 Final",
-   "rules": 
-   [
+   "rules": [
      {"action": "sniff"},
      {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "direct"},
