@@ -40,7 +40,7 @@
 "inbounds": [
   {
     "type": "tun",
-    "address": "172.19.0.1/30",
+    "address": "172.18.0.1/30",
     "mtu": 9000,
     "auto_route": true,
     "auto_redirect": true,
@@ -50,14 +50,14 @@
       "http_proxy": {
         "enabled": true,
         "server": "127.0.0.1",
-        "server_port": 2080
+        "server_port": 8080
       }
     }
   },
   {
     "type": "mixed",
     "listen": "127.0.0.1",
-    "listen_port": 2080,
+    "listen_port": 8080,
     "sniff": true,
     "users": []
   }
