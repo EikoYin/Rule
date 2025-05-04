@@ -10,8 +10,8 @@
       "external_controller": "0.0.0.0:9090",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
-      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
-      "external_ui_download_detour": "➡️ 直连",
+      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "✅ Static",
       "default_mode": "rule"
     },
     "cache_file": {
@@ -23,7 +23,7 @@
 
   "dns": {
     "servers": [
-      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "➡️ 直连"},
+      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
       {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "detour": "✅ Static"}
     ],
     "rules": [
@@ -52,37 +52,36 @@
     {
       "type": "mixed",
       "tag": "mixed-in",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "listen_port": 8080
     }
   ],
 
   "outbounds": [
-    { "tag": "✅ Static", "type": "selector", "outbounds": ["🚀 Speed Test", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🚀 Speed Test", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong|台|TW|Tai|新|SG|Singapore|日|JP|Japan|韩|KR|Korea|美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "🎯 Proxy", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "🤖 AI", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "👨🏿‍💻 GitHub", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "📲 Telegram", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "📺️ Bilibili", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "📹 YouTube", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🎶 Spotify", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🎮 Game", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🔍️ Yandex", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "📢 Google", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🍎 Apple", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🐟 Final", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "➡️ 直连"]},
-    { "tag": "🇭🇰 Hong Kong", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "🇨🇳 Tai Wan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["台|TW|Tai"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "🇸🇬 Singapore", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新|SG|Singapore"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "🇯🇵 Japan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["日|JP|Japan"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "🇰🇷 Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["韩|KR|Korea"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "🇺🇲 United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "➡️ 直连", "type": "direct" }
+    {"tag": "✅ Static", "type": "selector", "outbounds": ["🚀 Speed Test", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🚀 Speed Test", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong|台|TW|Tai|新|SG|Singapore|日|JP|Japan|韩|KR|Korea|美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🎯 Proxy", "type": "selector", "outbounds": ["{all}"]},
+    {"tag": "🤖 AI", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "👨🏿‍💻 GitHub", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "📲 Telegram", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "📺️ Bilibili", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "📹 YouTube", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🎥 Netflix", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🎶 Spotify", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🎮 Game", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🔍️ Yandex", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "📢 Google", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🪟 Microsoft", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🍎 Apple", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🐟 Final", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "direct"]},
+    {"tag": "🇭🇰 Hong Kong", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇨🇳 Tai Wan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["台|TW|Tai"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇸🇬 Singapore", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新|SG|Singapore"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇯🇵 Japan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["日|JP|Japan"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇰🇷 Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["韩|KR|Korea"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇺🇲 United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}
   ],
   
   "route": {
@@ -91,12 +90,12 @@
     "rules": [
       {"action": "sniff"},
       {"protocol": "dns", "action": "hijack-dns"},
-      {"clash_mode": "direct", "outbound": "➡️ 直连"},
+      {"clash_mode": "direct", "outbound": "direct"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
-      {"domain_suffix": "eikoyin.top", "outbound": "➡️ 直连"}, 
-      {"source_ip_cidr": "192.168.100.55/32", "outbound": "➡️ 直连"}, 
-      {"source_ip_cidr": "192.168.100.56/32", "outbound": "➡️ 直连"}, 
-      {"rule_set": "geosite-private", "outbound": "➡️ 直连"},
+      {"domain_suffix": "eikoyin.top", "outbound": "direct"}, 
+      {"source_ip_cidr": "192.168.100.55/32", "outbound": "direct"}, 
+      {"source_ip_cidr": "192.168.100.56/32", "outbound": "direct"}, 
+      {"rule_set": "geosite-private", "outbound": "direct"},
       {"rule_set": "geosite-ai", "outbound": "🤖 AI"},
       {"rule_set": "geosite-github", "outbound": "👨🏿‍💻 GitHub"},
       {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "📲 Telegram"},
@@ -106,16 +105,16 @@
       {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
       {"rule_set": "geosite-spotify", "outbound": "🎶 Spotify"},
       {"rule_set": "geosite-speedtest", "outbound": "➡️ 直连"},
-      {"rule_set": ["geosite-steam@cn", "geosite-epicgames@cn", "geosite-nintendo@cn", "geosite-xbox@cn"], "outbound": "➡️ 直连"},
+      {"rule_set": ["geosite-steam@cn", "geosite-epicgames@cn", "geosite-nintendo@cn", "geosite-xbox@cn"], "outbound": "direct"},
       {"rule_set": ["geosite-steam", "geosite-epicgames", "geosite-ea", "geosite-blizzard", "geosite-playstation", "geosite-nintendo", "geosite-xbox"], "outbound": "🎮 Game"},
       {"rule_set": "geosite-yandex", "outbound": "🔍️ Yandex"},
-      {"rule_set": ["geosite-google@cn", "geosite-microsoft@cn", "geosite-apple@cn"], "outbound": "➡️ 直连"},
+      {"rule_set": ["geosite-google@cn", "geosite-microsoft@cn", "geosite-apple@cn"], "outbound": "direct"},
       {"rule_set": ["geosite-google", "geoip-google"], "outbound": "📢 Google"},
       {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
       {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍎 Apple"},
       {"rule_set": "geosite-gfw", "outbound": "✅ Static"},
       {"rule_set": "geosite-geolocation-!cn", "outbound": "✅ Static"},
-      {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "➡️ 直连"}
+      {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "direct"}
     ],
     
     "rule_set": [
@@ -155,7 +154,7 @@
       { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/netflix.srs", "download_detour": "✅ Static"}, 
       { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/google.srs", "download_detour": "✅ Static"},
       { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geoip/apple.srs", "download_detour": "✅ Static"},
-      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "✅ Static"}, 
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "✅ Static"}
     ]
   }
 }
