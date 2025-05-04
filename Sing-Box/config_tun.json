@@ -117,7 +117,7 @@
       {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "direct"}
     ],
     
-   "rule_set": [
+    "rule_set": [
       {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs", "download_detour": "✅ Static"},
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "✅ Static"},
       {"tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/github.srs", "download_detour": "✅ Static"},
