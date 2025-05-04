@@ -7,7 +7,7 @@
   
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9095",
+      "external_controller": "0.0.0.0:9090",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
       "external_ui_download_url": "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
@@ -52,8 +52,8 @@
     {
       "type": "mixed",
       "tag": "mixed-in",
-      "listen": "0.0.0.0",
-      "listen_port": 7893
+      "listen": "127.0.0.1",
+      "listen_port": 8080
     }
   ],
 
