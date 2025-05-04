@@ -21,24 +21,21 @@
     }
   },
 
- "dns": 
- {
-   "servers": 
-   [
-     {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
-     {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "detour": "✅ Static"}
-   ],
-   "rules": 
-   [
-     {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"clash_mode": "Direct", "server": "LocalDNS"},
-     {"clash_mode": "Global", "server": "ProxyDNS"},
-     {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
-     {"rule_set": "geosite-cn", "action": "route","server": "LocalDNS"},
-     {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "ProxyDNS"}
-   ],
-   "final": "ProxyDNS"
-},
+  "dns": {
+    "servers": [
+      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
+      {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "detour": "✅ Static"}
+    ],
+    "rules": [
+      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
+      {"clash_mode": "Direct", "server": "LocalDNS"},
+      {"clash_mode": "Global", "server": "ProxyDNS"},
+      {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
+      {"rule_set": "geosite-cn", "action": "route","server": "LocalDNS"},
+      {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "ProxyDNS"}
+    ],
+    "final": "ProxyDNS"
+  },
 
 "inbounds": [
   {
