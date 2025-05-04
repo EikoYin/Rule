@@ -37,25 +37,25 @@
     "final": "ProxyDNS"
   },
 
-"inbounds": [
-  {
-    "type": "tun",
-    "tag": "tun-in",
-    "address": [
-      "172.18.0.1/30",
-      "fdfe:dcba:9876::1/126"
-    ],
-    "mtu": 9000,
-    "auto_route": true,
-    "auto_redirect": true
-  },
-  {
-    "type": "mixed",
-    "tag": "mixed-in",
-    "listen": "0.0.0.0",
-    "listen_port": 8080
-  }
-],
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "auto_redirect": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 8080
+    }
+  ],
 
   "outbounds": [
     {"tag": "✅ Static", "type": "selector", "outbounds": ["🚀 Speed Test", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
