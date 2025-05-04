@@ -31,8 +31,6 @@
       {"clash_mode": "Direct", "server": "LocalDNS"},
       {"clash_mode": "Global", "server": "ProxyDNS"},
       {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
-      {"source_ip_cidr": "192.168.100.55/32", "action": "route", "server": "LocalDNS"},
-      {"source_ip_cidr": "192.168.100.56/32", "action": "route", "server": "LocalDNS"},
       {"rule_set": "geosite-cn", "action": "route", "server": "LocalDNS"},
       {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "ProxyDNS"}
     ],
