@@ -104,7 +104,7 @@
       {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
       {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
       {"rule_set": "geosite-spotify", "outbound": "🎶 Spotify"},
-      {"rule_set": "geosite-speedtest", "outbound": "➡️ 直连"},
+      {"rule_set": "geosite-speedtest", "outbound": "direct"},
       {"rule_set": ["geosite-steam@cn", "geosite-epicgames@cn", "geosite-nintendo@cn", "geosite-xbox@cn"], "outbound": "direct"},
       {"rule_set": ["geosite-steam", "geosite-epicgames", "geosite-ea", "geosite-blizzard", "geosite-playstation", "geosite-nintendo", "geosite-xbox"], "outbound": "🎮 Game"},
       {"rule_set": "geosite-yandex", "outbound": "🔍️ Yandex"},
