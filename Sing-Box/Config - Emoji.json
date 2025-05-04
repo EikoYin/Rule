@@ -93,7 +93,7 @@
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {"rule_set": "geosite-private", "outbound": "direct"},
       {"rule_set": "geosite-ai", "outbound": "🤖 AI"},
-      {"rule_set": "geosite-github", "outbound": "👨🏿‍💻 GitHub"},
+      {"rule_set": "geosite-github", "outbound": "👨‍💻 GitHub"},
       {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "📲 Telegram"},
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
       {"rule_set": ["geosite-bilibili", "geoip-bilibili"], "outbound": "📺️ Bilibili"},
