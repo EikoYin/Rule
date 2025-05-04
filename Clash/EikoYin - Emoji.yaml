@@ -94,15 +94,15 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - 218.4.4.4
+    - 218.2.2.2
  
 # 出站
 pr: &pr {type: select, proxies: [✅ Static, 🇭🇰 Hong Kong, 🇨🇳 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
 proxy-groups:
   - {name: ✅ Static, type: select, proxies: [🚀 Speed Test, 🇭🇰 Hong Kong, 🇨🇳 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
   - {name: 🚀 Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))"}
-  - {name: 🎯 Proxy, type: select, include-all: true}
+  - {name: 🎯 Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(GB|Expire|Traffic|套餐|剩余|重置)).)*$"}
   - {name: 🤖 AI, <<: *pr}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 📲 Telegram, <<: *pr}
@@ -118,7 +118,7 @@ proxy-groups:
   - {name: 🍎 Apple, <<: *pr}
   - {name: 🐟 Final, type: select, proxies: [✅ Static, 🎯 Proxy, DIRECT]}
   - {name: 🇭🇰 Hong Kong, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))"}
-  - {name: 🇨🇳 Tai Wan, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))"}
+  - {name: 🇨🇳 Tai Wan, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))^((?!(Britain)).)*$"}
   - {name: 🇸🇬 Singapore, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(新|SG|(?i)Singapore))"}
   - {name: 🇯🇵 Japan, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(日|JP|(?i)Japan))"}
   - {name: 🇰🇷 Korea, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(韩|KR|(?i)Korea))"}
@@ -127,6 +127,8 @@ proxy-groups:
 # 规则匹配
 rules:
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
+  - SRC-IP-CIDR,192.168.100.55/32,DIRECT
+  - SRC-IP-CIDR,192.168.100.56/32,DIRECT
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,🤖 AI
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
