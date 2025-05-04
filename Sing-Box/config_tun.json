@@ -84,12 +84,10 @@
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}
   ],
   
-  "route": 
- {
-   "auto_detect_interface": true,
-   "final": "🐟 Final",
-   "rules": 
-   [
+  "route": {
+    "auto_detect_interface": true,
+    "final": "🐟 Final",
+    "rules": [
       {"action": "sniff"},
       {"protocol": "dns", "action": "hijack-dns"},
       {"clash_mode": "direct", "outbound": "direct"},
@@ -117,7 +115,7 @@
       {"rule_set": "geosite-gfw", "outbound": "✅ Static"},
       {"rule_set": "geosite-geolocation-!cn", "outbound": "✅ Static"},
       {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "direct"}
-   ],
+    ],
     
    "rule_set": [
       {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs", "download_detour": "✅ Static"},
