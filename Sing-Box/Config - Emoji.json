@@ -61,7 +61,7 @@
     {"tag": "🚀 Speed Test", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong|台|TW|Tai|新|SG|Singapore|日|JP|Japan|韩|KR|Korea|美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
     {"tag": "🎯 Proxy", "type": "selector", "outbounds": ["{all}"]},
     {"tag": "🤖 AI", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
-    {"tag": "👨🏿‍💻 GitHub", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "👨‍💻 GitHub", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
     {"tag": "📲 Telegram", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
     {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
     {"tag": "📺️ Bilibili", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
