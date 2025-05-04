@@ -126,7 +126,6 @@ proxy-groups:
 
 # 规则匹配
 rules:
-  - DOMAIN-SUFFIX,eikoyin.top,DIRECT
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,AI
   - RULE-SET,github_domain,GitHub
