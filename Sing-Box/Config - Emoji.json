@@ -102,6 +102,8 @@
       {"clash_mode": "direct", "outbound": "direct"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
       {"domain_suffix": "eikoyin.top", "outbound": "direct"}, 
+      {"source_ip_cidr": "192.168.100.55/32", "outbound": "direct"}, 
+      {"source_ip_cidr": "192.168.100.56/32", "outbound": "direct"}, 
       {"rule_set": "geosite-private", "outbound": "direct"},
       {"rule_set": "geosite-ai", "outbound": "🤖 AI"},
       {"rule_set": "geosite-github", "outbound": "👨🏿‍💻 GitHub"},
