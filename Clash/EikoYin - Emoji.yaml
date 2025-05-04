@@ -131,7 +131,7 @@ rules:
   - SRC-IP-CIDR,192.168.100.56/32,DIRECT
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,🤖 AI
-  - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,github_domain,👨‍💻 GitHub
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,bilibili_domain,📺️ Bilibili
