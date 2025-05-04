@@ -42,8 +42,8 @@
 
 "inbounds": [
   {
-    "tag": "tun-in",
     "type": "tun",
+    "tag": "tun-in",
     "address": [
       "172.18.0.1/30",
       "fdfe:dcba:9876::1/126"
@@ -53,8 +53,8 @@
     "auto_redirect": true
   },
   {
-    "tag": "mixed-in",
     "type": "mixed",
+    "tag": "mixed-in",
     "listen": "0.0.0.0",
     "listen_port": 8080
   }
