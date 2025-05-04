@@ -1,6 +1,6 @@
 # 机场订阅
 proxy-providers:
-  Airport:
+  AirPort:
     url: "机场订阅"
     type: http
     interval: 86400
@@ -102,7 +102,7 @@ pr: &pr {type: select, proxies: [Static, Hong Kong, Tai Wan, Singapore, Japan, K
 proxy-groups:
   - {name: Static, type: select, proxies: [Speed Test, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, DIRECT], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"}
   - {name: Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
-  - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(GB|Expire|Traffic|剩余|套餐|重置)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}
+  - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(GB|Expire|Traffic|套餐|剩余|重置)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}
   - {name: AI, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"}
   - {name: GitHub, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"}
   - {name: Telegram, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"}
