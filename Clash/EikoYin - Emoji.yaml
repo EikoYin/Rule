@@ -104,7 +104,7 @@ proxy-groups:
   - {name: 🚀 Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))"}
   - {name: 🎯 Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(GB|Expire|Traffic|套餐|剩余|重置)).)*$"}
   - {name: 🤖 AI, <<: *pr}
-  - {name: 👨🏿‍💻 GitHub, <<: *pr}
+  - {name: 👨‍💻 GitHub, <<: *pr}
   - {name: 📲 Telegram, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📺️ Bilibili, <<: *pr}
