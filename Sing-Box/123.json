@@ -1,0 +1,98 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9090",
+      "external_ui": "/etc/sing-box/ui",
+      "secret": "",
+      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "✅ Static",
+      "default_mode": "rule"
+    },
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db",
+      "store_fakeip": false
+    }
+  },
+
+  "dns": {
+    "servers": [
+      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
+      {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "address_resolver": "LocalDNS", "detour": "✅ Static"}
+    ],
+    "rules": [
+      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
+      {"clash_mode": "Direct", "server": "LocalDNS"},
+      {"clash_mode": "Global", "server": "ProxyDNS"},
+      {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
+      {"rule_set": "geosite-cn", "action": "route","server": "LocalDNS"},
+      {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "ProxyDNS"}
+    ],
+    "final": "ProxyDNS"
+  },
+
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "auto_redirect": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 8080
+    }
+  ],
+
+  "outbounds": [
+    {"tag": "✅ Static", "type": "selector", "outbounds": ["🚀 Speed Test", "🇭🇰 Hong Kong", "🇨🇳 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "direct"]},
+    {"tag": "🚀 Speed Test", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong|台|TW|Tai|新|SG|Singapore|日|JP|Japan|韩|KR|Korea|美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🎯 Proxy", "type": "selector", "outbounds": ["{all}"]},
+    {"tag": "🐟 Final", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "direct"]},
+    {"tag": "🇭🇰 Hong Kong", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["港|HK|Hong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇨🇳 Tai Wan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["台|TW|Tai"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇸🇬 Singapore", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新|SG|Singapore"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇯🇵 Japan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["日|JP|Japan"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇰🇷 Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["韩|KR|Korea"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "🇺🇲 United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}
+  ],
+  
+  "route": {
+    "auto_detect_interface": true,
+    "final": "🐟 Final",
+    "rules": [
+      {"action": "sniff"},
+      {"protocol": "dns", "action": "hijack-dns"},
+      {"clash_mode": "direct", "outbound": "direct"},
+      {"clash_mode": "global", "outbound": "GLOBAL"},
+      {"domain_suffix": "eikoyin.top", "outbound": "direct"}, 
+      {"source_ip_cidr": "192.168.100.55/32", "outbound": "direct"}, 
+      {"source_ip_cidr": "192.168.100.56/32", "outbound": "direct"},
+      {"rule_set": "geosite-private", "outbound": "direct"},
+      {"rule_set": "geosite-gfw", "outbound": "✅ Static"},
+      {"rule_set": "geosite-geolocation-!cn", "outbound": "✅ Static"},
+      {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "direct"}
+    ],
+    "rule_set": [
+      {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs", "download_detour": "✅ Static"},
+      {"tag": "geosite-gfw", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/gfw.srs", "download_detour": "✅ Static"},
+      {"tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "✅ Static"},
+      {"tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/cn.srs", "download_detour": "✅ Static"},
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "✅ Static"}
+    ]
+  }
+ }
