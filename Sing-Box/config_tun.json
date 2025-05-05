@@ -7,7 +7,7 @@
   
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9095",
+      "external_controller": "0.0.0.0:9090",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
@@ -21,24 +21,21 @@
     }
   },
 
- "dns": 
- {
-   "servers": 
-   [
-     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "➡️ 直连"},
-     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
-   ],
-   "rules": 
-   [
-     {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"clash_mode": "Direct", "server": "dns_direct"},
-     {"clash_mode": "Global", "server": "dns_proxy"},
-     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
-   ],
-   "final": "dns_proxy",
-   "strategy": "ipv4_only"
-},
+"dns": {
+    "servers": [
+      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "direct"},
+      {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "address_resolver": "LocalDNS", "detour": "🚀 节点选择"}
+    ],
+    "rules": [
+      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
+      {"clash_mode": "Direct", "server": "LocalDNS"},
+      {"clash_mode": "Global", "server": "ProxyDNS"},
+      {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
+      {"rule_set": "geosite-cn", "action": "route","server": "LocalDNS"},
+      {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "ProxyDNS"}
+    ],
+    "final": "ProxyDNS"
+  },
 
 "inbounds": [
   {
