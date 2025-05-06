@@ -89,8 +89,8 @@
     "rules": [
       {"action": "sniff"},
       {"protocol": "dns", "action": "hijack-dns"},
-      {"clash_mode": "direct", "outbound": "Direct"},
-      {"clash_mode": "global", "outbound": "GLOBAL"},
+      {"clash_mode": "Direct", "outbound": "Direct"},
+      {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"rule_set": "geosite-private", "outbound": "Direct"},
       {"rule_set": "geosite-ai", "outbound": "🤖 AI"},
       {"rule_set": "geosite-github", "outbound": "👨‍💻 GitHub"},
