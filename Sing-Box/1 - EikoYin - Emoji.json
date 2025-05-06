@@ -27,7 +27,7 @@
       {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "address_resolver": "LocalDNS", "detour": "✅ Static"}
     ],
     "rules": [
-      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
+      {"outbound": "any", "server": "LocalDNS", "disable_cache": true},
       {"clash_mode": "Direct", "server": "LocalDNS"},
       {"clash_mode": "Global", "server": "ProxyDNS"},
       {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
