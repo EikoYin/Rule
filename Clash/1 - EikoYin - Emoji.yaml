@@ -94,8 +94,8 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - 218.4.4.4
-    - 218.2.2.2
+    - 223.5.5.5
+    - 119.29.29.29
  
 # 出站
 pr: &pr {type: select, proxies: [✅ Static, 🇭🇰 Hong Kong, 🇨🇳 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
