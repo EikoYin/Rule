@@ -8,7 +8,7 @@
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9090",
-      "external_ui": "/etc/sing-box/ui",
+      "external_ui": "/etc/momo/run/ui",
       "secret": "",
       "external_ui_download_url": "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "Static",
@@ -16,45 +16,70 @@
     },
     "cache_file": {
       "enabled": true,
-      "path": "/etc/sing-box/cache.db",
+      "path": "/etc/momo/run/cache.db",
       "store_fakeip": false
     }
   },
 
   "dns": {
     "servers": [
-      {"tag": "LocalDNS", "address": "223.5.5.5", "detour": "Direct"},
-      {"tag": "ProxyDNS", "address": "tls://8.8.8.8", "address_resolver": "LocalDNS", "detour": "Static"}
+      {"tag": "LocalDNS", "type": "udp", "server": "223.5.5.5", "detour": "Direct"},
+      {"tag": "ProxyDNS", "type": "https", "server": "8.8.8.8", "detour": "Static"}
     ],
     "rules": [
-      {"outbound": "any", "server": "LocalDNS", "disable_cache": true},
       {"clash_mode": "Direct", "server": "LocalDNS"},
       {"clash_mode": "Global", "server": "ProxyDNS"},
-      {"domain_suffix": "eikoyin.top", "action": "route", "server": "LocalDNS"},
-      {"rule_set": "geosite-cn", "action": "route","server": "LocalDNS"},
-      {"rule_set": "geosite-geolocation-!cn", "action": "route", "server": "ProxyDNS"}
+	    {"query_type": "HTTPS", "action": "reject"},
+      {"domain_suffix": "eikoyin.top", "server": "LocalDNS"},
+      {"rule_set": "geosite-cn", "server": "LocalDNS"},
+      {"rule_set": "geosite-geolocation-!cn", "server": "ProxyDNS"}
     ],
-    "final": "ProxyDNS"
+    "final": "ProxyDNS",
+	  "independent_cache": true,
+	  "reverse_mapping": true
   },
 
   "inbounds": [
     {
-      "type": "tun",
+      "tag": "dns-in",
+      "type": "direct",
+      "listen": "::",
+      "listen_port": 1053
+    },
+    {
+      "tag": "http-in",
+      "type": "http",
+      "listen": "::",
+      "listen_port": 8080
+    },
+    {
+      "tag": "socks-in",
+      "type": "socks",
+      "listen": "::",
+      "listen_port": 1080
+    },
+    {
+      "tag": "redirect-in",
+      "type": "redirect",
+      "listen": "::",
+      "listen_port": 7890
+    },
+    {
+      "tag": "tproxy-in",
+      "type": "tproxy",
+      "listen": "::",
+      "listen_port": 7891
+    },
+    {
       "tag": "tun-in",
+      "type": "tun",
+      "interface_name": "momo",
       "address": [
         "172.18.0.1/30",
         "fdfe:dcba:9876::1/126"
       ],
-      "mtu": 9000,
-      "auto_route": true,
-      "auto_redirect": true,
-      "stack": "mixed"
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "0.0.0.0",
-      "listen_port": 8080
+      "auto_route": false,
+      "auto_redirect": false
     }
   ],
 
@@ -87,8 +112,6 @@
   ],
   
   "route": {
-    "auto_detect_interface": true,
-    "final": "Final",
     "rules": [
       {"action": "sniff"},
       {"protocol": "dns", "action": "hijack-dns"},
@@ -155,6 +178,8 @@
       {"tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/google.srs", "download_detour": "Static"},
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geoip/apple.srs", "download_detour": "Static"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "Static"}
-    ]
+    ],
+    "final": "🐟 Final",
+	  "default_domain_resolver": {"server": "LocalDNS"}
   }
- }
+}
