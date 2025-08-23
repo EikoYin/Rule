@@ -29,14 +29,14 @@
     "rules": [
       {"clash_mode": "Direct", "server": "LocalDNS"},
       {"clash_mode": "Global", "server": "ProxyDNS"},
-	    {"query_type": "HTTPS", "action": "reject"},
+	  {"query_type": "HTTPS", "action": "reject"},
       {"domain_suffix": "eikoyin.top", "server": "LocalDNS"},
       {"rule_set": "geosite-cn", "server": "LocalDNS"},
       {"rule_set": "geosite-geolocation-!cn", "server": "ProxyDNS"}
     ],
     "final": "ProxyDNS",
-	  "independent_cache": true,
-	  "reverse_mapping": true
+	"independent_cache": true,
+	"reverse_mapping": true
   },
 
   "inbounds": [
@@ -113,7 +113,8 @@
   
   "route": {
     "rules": [
-      {"action": "sniff"},
+      {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
+      {"inbound": "dns-in", "action": "hijack-dns"},
       {"protocol": "dns", "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
@@ -179,7 +180,7 @@
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geoip/apple.srs", "download_detour": "Static"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "Static"}
     ],
-    "final": "🐟 Final",
-	  "default_domain_resolver": {"server": "LocalDNS"}
+    "final": "Final",
+	"default_domain_resolver": {"server": "LocalDNS"}
   }
 }
