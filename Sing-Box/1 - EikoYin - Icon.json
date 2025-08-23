@@ -115,7 +115,6 @@
     "rules": [
       {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
       {"inbound": "dns-in", "action": "hijack-dns"},
-      {"protocol": "dns", "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"domain_suffix": "eikoyin.top", "outbound": "Direct"}, 
