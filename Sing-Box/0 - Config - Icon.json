@@ -176,7 +176,7 @@
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo-lite/geoip/apple.srs", "download_detour": "Static"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "Static"}
     ],
-	"final": "🐟 Final",
+	"final": "Final",
 	"default_domain_resolver": {"server": "LocalDNS"}
   }
 }
