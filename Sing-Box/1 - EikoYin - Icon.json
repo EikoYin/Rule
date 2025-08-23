@@ -107,7 +107,7 @@
     {"tag": "Japan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["日|JP|Japan"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20, "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"},
     {"tag": "Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["韩|KR|Korea"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20, "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"},
     {"tag": "United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20, "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"},
-    {"tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["Static", "Proxy", "Direct"]},
     {"tag": "Direct", "type": "direct"}
   ],
   
