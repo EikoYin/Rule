@@ -77,7 +77,6 @@
     "rules": [
       {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
-      {"ip_is_private": true, "outbound": "Direct"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"rule_set": "geosite-private", "outbound": "Direct"},
