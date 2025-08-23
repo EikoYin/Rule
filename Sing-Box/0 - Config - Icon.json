@@ -24,13 +24,12 @@
   "dns": {
     "servers": [
       {"tag": "LocalDNS", "type": "udp", "server": "223.5.5.5", "detour": "Direct"},
-	  {"tag": "ProxyDNS", "type": "https", "server": "8.8.8.8", "detour": "✅ Static"}
+	  {"tag": "ProxyDNS", "type": "https", "server": "8.8.8.8", "detour": "Static"}
     ],
     "rules": [
       {"clash_mode": "Direct", "server": "LocalDNS"},
       {"clash_mode": "Global", "server": "ProxyDNS"},
 	  {"query_type": "HTTPS", "action": "reject"},
-      {"domain_suffix": "eikoyin.top", "server": "LocalDNS"},
       {"rule_set": "geosite-cn", "server": "LocalDNS"},
       {"rule_set": "geosite-geolocation-!cn", "server": "ProxyDNS"}
     ],
