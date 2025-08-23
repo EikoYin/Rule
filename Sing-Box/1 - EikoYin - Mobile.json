@@ -71,7 +71,7 @@
     {"tag": "🇯🇵 Japan", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["日|JP|Japan"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
     {"tag": "🇰🇷 Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["韩|KR|Korea"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
     {"tag": "🇺🇲 United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["美|US|States|America"] }], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    {"tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "Direct"]},
     {"tag": "Direct", "type": "direct"}
   ],
   "route": {
