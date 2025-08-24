@@ -73,6 +73,7 @@
     {"tag": "🇺🇲 United States", "type": "urltest", "outbounds": []},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "Direct"]},
     {"tag": "Direct", "type": "direct"}
+	{"tag": "Reject", "type": "reject"}
   ],
   "route": {
     "rules": [
@@ -81,6 +82,7 @@
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"domain_suffix": "eikoyin.top", "outbound": "Direct"}, 
+	  {"rule_set": "geosite-awavenue", "outbound": "Reject"},
       {"rule_set": "geosite-private", "outbound": "Direct"},
       {"rule_set": "geosite-ai", "outbound": "🤖 AI"},
       {"rule_set": "geosite-github", "outbound": "👨‍💻 GitHub"},
@@ -103,6 +105,7 @@
       {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "Direct"}
     ],
     "rule_set": [
+	  {"tag": "geosite-awavenue", "type": "remote", "format": "source", "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json", "download_detour": "✅ Static"},
       {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs", "download_detour": "✅ Static"},
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "✅ Static"},
       {"tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/github.srs", "download_detour": "✅ Static"},
