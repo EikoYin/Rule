@@ -72,7 +72,7 @@
     {"tag": "🇰🇷 Korea", "type": "urltest", "outbounds": []},
     {"tag": "🇺🇲 United States", "type": "urltest", "outbounds": []},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "Direct"]},
-    {"tag": "Direct", "type": "direct"}
+    {"tag": "Direct", "type": "direct"},
 	{"tag": "Reject", "type": "reject"}
   ],
   "route": {
