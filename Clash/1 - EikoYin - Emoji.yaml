@@ -129,8 +129,8 @@ rules:
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
   - SRC-IP-CIDR,192.168.100.55/32,DIRECT
   - SRC-IP-CIDR,192.168.100.56/32,DIRECT
-  - DOMAIN-SUFFIX,oplist.org,Static
-  - DOMAIN-SUFFIX,urlapi-dodo.cyou,Static
+  - DOMAIN-SUFFIX,oplist.org,✅ Static
+  - DOMAIN-SUFFIX,urlapi-dodo.cyou,✅ Static
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,🤖 AI
   - RULE-SET,github_domain,👨‍💻 GitHub
