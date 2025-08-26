@@ -117,7 +117,7 @@ proxy-groups:
 # 规则匹配
 rules:
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
-  - DOMAIN-SUFFIX,oplist.org,Static
+  - DOMAIN-SUFFIX,oplist.org,✅ Static
   - RULE-SET,awavenue_domain,REJECT
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,🤖 AI
