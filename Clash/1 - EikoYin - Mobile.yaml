@@ -118,7 +118,6 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
   - DOMAIN-SUFFIX,oplist.org,Static
-  - DOMAIN-SUFFIX,urlapi-dodo.cyou,Static
   - RULE-SET,awavenue_domain,REJECT
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,🤖 AI
