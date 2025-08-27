@@ -613,7 +613,7 @@ config routing_rule 'z16'
 	option mode 'default'
 	list rule_set 'y28'
 	list rule_set 'y36'
-	option outbound 'x7'
+	option outbound 'direct-out'
 
 config routing_rule 'z17'
 	option label 'gfw'
