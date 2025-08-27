@@ -72,7 +72,7 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:private_domain,cn_domain,speedtest_domain,steam@cn_domain,nintendo@cn_domain,xbox@cn_domain,google@cn_domain,microsoft@cn_domain,apple@cn_domain"
+    - "rule-set:private_domain,cn_domain"
     - "+.lan"
     - "+.local"
     - "+.services.googleapis.cn"
