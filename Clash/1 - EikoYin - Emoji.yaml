@@ -22,7 +22,7 @@ tproxy-port: 7892
 allow-lan: true
 bind-address: "*"
 ipv6: true
-unified-delay: true
+unified-delay: false
 tcp-concurrent: true
 log-level: warning
 find-process-mode: 'off'
