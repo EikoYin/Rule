@@ -81,6 +81,7 @@
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
+	  {"ip_version": "6", "outbound": "Direct"},
       {"domain_suffix": "eikoyin.top", "outbound": "Direct"}, 
 	  {"rule_set": "geosite-awavenue", "outbound": "Block"},
       {"rule_set": "geosite-private", "outbound": "Direct"},
