@@ -116,6 +116,7 @@
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
+	  {"ip_version": "6", "outbound": "Direct"},
       {"domain_suffix": "eikoyin.top", "outbound": "Direct"}, 
       {"source_ip_cidr": ["192.168.100.55/32", "192.168.100.56/32"], "outbound": "Direct"},
       {"rule_set": "geosite-private", "outbound": "Direct"},
