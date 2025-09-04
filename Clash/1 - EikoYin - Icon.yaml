@@ -129,7 +129,6 @@ proxy-groups:
 
 # 规则匹配
 rules:
-  - IP-CIDR,::/0,DIRECT
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
   - SRC-IP-CIDR,192.168.100.55/32,DIRECT
   - SRC-IP-CIDR,192.168.100.56/32,DIRECT
