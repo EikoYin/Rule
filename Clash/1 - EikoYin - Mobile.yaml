@@ -119,7 +119,6 @@ proxy-groups:
 
 # 规则匹配
 rules:
-  - IP-CIDR,::/0,DIRECT
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
   - DOMAIN-SUFFIX,oplist.org,✅ Static
   - RULE-SET,awavenue_domain,REJECT
