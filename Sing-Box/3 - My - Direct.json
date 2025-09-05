@@ -5,6 +5,11 @@
       "domain_suffix": [
         "eikoyin.top"
       ]
+    },
+    {
+      "ip_cidr": [
+        "::/0"
+      ]
     }
   ]
 }
