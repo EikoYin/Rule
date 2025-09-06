@@ -135,6 +135,7 @@ proxy-groups:
   - {name: Japan - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(日|JP|(?i)Japan))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"}
   - {name: Korea - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(韩|KR|(?i)Korea))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"}
   - {name: United States - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"}
+
 # 规则匹配
 rules:
   - RULE-SET,private_domain,DIRECT
