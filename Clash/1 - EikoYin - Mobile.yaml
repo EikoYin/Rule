@@ -133,7 +133,6 @@ proxy-groups:
 
 # 规则匹配
 rules:
-  - IP-CIDR,::/0,DIRECT
   - DOMAIN-SUFFIX,eikoyin.top,DIRECT
   - RULE-SET,awavenue_domain,REJECT
   - RULE-SET,private_domain,DIRECT
