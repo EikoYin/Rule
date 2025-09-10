@@ -88,9 +88,9 @@ dns:
     - 119.29.29.29
  
 # 出站
-pr: &pr {type: select, proxies: [✅ Static, 🇭🇰 Hong Kong, 🇨🇳 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
+pr: &pr {type: select, proxies: [✅ Static, 🇭🇰 Hong Kong, 🇹🇼 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
 proxy-groups:
-  - {name: ✅ Static, type: select, proxies: [🚀 Speed Test, 🇭🇰 Hong Kong, 🇨🇳 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
+  - {name: ✅ Static, type: select, proxies: [🚀 Speed Test, 🇭🇰 Hong Kong, 🇹🇼 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
   - {name: 🚀 Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))"}
   - {name: 🎯 Proxy, type: select, include-all: true}
   - {name: 🤖 AI, <<: *pr}
@@ -108,19 +108,19 @@ proxy-groups:
   - {name: 🍎 Apple, <<: *pr}
   - {name: 🐟 Final, type: select, proxies: [✅ Static, 🎯 Proxy, DIRECT]}
   - {name: 🇭🇰 Hong Kong, type: fallback, proxies: [🇭🇰 Hong Kong - Select, 🇭🇰 Hong Kong - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇨🇳 Tai Wan, type: fallback, proxies: [🇨🇳 Tai Wan - Select, 🇨🇳 Tai Wan - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
+  - {name: 🇹🇼 Tai Wan, type: fallback, proxies: [🇹🇼 Tai Wan - Select, 🇹🇼 Tai Wan - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
   - {name: 🇸🇬 Singapore, type: fallback, proxies: [🇸🇬 Singapore - Select, 🇸🇬 Singapore - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
   - {name: 🇯🇵 Japan, type: fallback, proxies: [🇯🇵 Japan - Select, 🇯🇵 Japan - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
   - {name: 🇰🇷 Korea, type: fallback, proxies: [🇰🇷 Korea - Select, 🇰🇷 Korea - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
   - {name: 🇺🇲 United States, type: fallback, proxies: [🇺🇲 United States - Select, 🇺🇲 United States - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
   - {name: 🇭🇰 Hong Kong - Select, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))"}
-  - {name: 🇨🇳 Tai Wan - Select, type: select, include-all: true, filter: "(?=.*(台|TW|(?i)Tai))"}
+  - {name: 🇹🇼 Tai Wan - Select, type: select, include-all: true, filter: "(?=.*(台|TW|(?i)Tai))"}
   - {name: 🇸🇬 Singapore - Select, type: select, include-all: true, filter: "(?=.*(新|SG|(?i)🇸🇬 Singapore))"}
   - {name: 🇯🇵 Japan - Select, type: select, include-all: true, filter: "(?=.*(日|JP|(?i)🇯🇵 Japan))"}
   - {name: 🇰🇷 Korea - Select, type: select, include-all: true, filter: "(?=.*(韩|KR|(?i)🇰🇷 Korea))"}
   - {name: 🇺🇲 United States - Select, type: select, include-all: true, filter: "(?=.*(美|US|(?i)States|America))"}
   - {name: 🇭🇰 Hong Kong - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))"}
-  - {name: 🇨🇳 Tai Wan - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))"}
+  - {name: 🇹🇼 Tai Wan - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))"}
   - {name: 🇸🇬 Singapore - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(新|SG|(?i)🇸🇬 Singapore))"}
   - {name: 🇯🇵 Japan - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(日|JP|(?i)🇯🇵 Japan))"}
   - {name: 🇰🇷 Korea - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(韩|KR|(?i)🇰🇷 Korea))"}
