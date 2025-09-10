@@ -101,7 +101,7 @@
     {"tag": "🍎 Apple", "type": "selector", "outbounds": ["✅ Static", "🇭🇰 Hong Kong", "🇹🇼 Tai Wan", "🇸🇬 Singapore", "🇯🇵 Japan", "🇰🇷 Korea", "🇺🇲 United States", "🎯 Proxy", "Direct"]},
     {"tag": "🐟 Final", "type": "selector", "outbounds": ["✅ Static", "🎯 Proxy", "Direct"]},
     {"tag": "🇭🇰 Hong Kong", "type": "urltest", "outbounds": []},
-    {"tag": "🇨🇳 Tai Wan", "type": "urltest", "outbounds": []},
+    {"tag": "🇹🇼 Tai Wan", "type": "urltest", "outbounds": []},
     {"tag": "🇸🇬 Singapore", "type": "urltest", "outbounds": []},
     {"tag": "🇯🇵 Japan", "type": "urltest", "outbounds": []},
     {"tag": "🇰🇷 Korea", "type": "urltest", "outbounds": []},
