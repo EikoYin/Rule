@@ -77,8 +77,6 @@ dns:
     - "+.local"
     - "+.services.googleapis.cn"
     - "+.xn--ngstr-lra8j.com"
-    - "+.cdn-163.sbs"
-    - "+.candytally10.vip"
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
@@ -112,24 +110,12 @@ proxy-groups:
   - {name: 🪟 Microsoft, <<: *pr}
   - {name: 🍎 Apple, <<: *pr}
   - {name: 🐟 Final, type: select, proxies: [✅ Static, 🎯 Proxy, DIRECT]}
-  - {name: 🇭🇰 Hong Kong, type: fallback, proxies: [🇭🇰 Hong Kong - Select, 🇭🇰 Hong Kong - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇹🇼 Tai Wan, type: fallback, proxies: [🇹🇼 Tai Wan - Select, 🇹🇼 Tai Wan - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇸🇬 Singapore, type: fallback, proxies: [🇸🇬 Singapore - Select, 🇸🇬 Singapore - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇯🇵 Japan, type: fallback, proxies: [🇯🇵 Japan - Select, 🇯🇵 Japan - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇰🇷 Korea, type: fallback, proxies: [🇰🇷 Korea - Select, 🇰🇷 Korea - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇺🇲 United States, type: fallback, proxies: [🇺🇲 United States - Select, 🇺🇲 United States - URLTest], url: "https://www.gstatic.com/generate_204", interval: 300, lazy: false}
-  - {name: 🇭🇰 Hong Kong - Select, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))"}
-  - {name: 🇹🇼 Tai Wan - Select, type: select, include-all: true, filter: "(?=.*(台|TW|(?i)Tai))"}
-  - {name: 🇸🇬 Singapore - Select, type: select, include-all: true, filter: "(?=.*(新|SG|(?i)🇸🇬 Singapore))"}
-  - {name: 🇯🇵 Japan - Select, type: select, include-all: true, filter: "(?=.*(日|JP|(?i)🇯🇵 Japan))"}
-  - {name: 🇰🇷 Korea - Select, type: select, include-all: true, filter: "(?=.*(韩|KR|(?i)🇰🇷 Korea))"}
-  - {name: 🇺🇲 United States - Select, type: select, include-all: true, filter: "(?=.*(美|US|(?i)States|America))"}
-  - {name: 🇭🇰 Hong Kong - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))"}
-  - {name: 🇹🇼 Tai Wan - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))"}
-  - {name: 🇸🇬 Singapore - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(新|SG|(?i)🇸🇬 Singapore))"}
-  - {name: 🇯🇵 Japan - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(日|JP|(?i)🇯🇵 Japan))"}
-  - {name: 🇰🇷 Korea - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(韩|KR|(?i)🇰🇷 Korea))"}
-  - {name: 🇺🇲 United States - URLTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(美|US|(?i)States|America))"}
+  - {name: 🇭🇰 Hong Kong, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))"}
+  - {name: 🇹🇼 Tai Wan, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))"}
+  - {name: 🇸🇬 Singapore, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(新|SG|(?i)🇸🇬 Singapore))"}
+  - {name: 🇯🇵 Japan, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(日|JP|(?i)🇯🇵 Japan))"}
+  - {name: 🇰🇷 Korea, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(韩|KR|(?i)🇰🇷 Korea))"}
+  - {name: 🇺🇲 United States, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(美|US|(?i)States|America))"}
 
 # 规则匹配
 rules:
