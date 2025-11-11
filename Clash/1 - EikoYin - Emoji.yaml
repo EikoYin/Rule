@@ -90,15 +90,12 @@ dns:
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-  direct-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
   proxy-server-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - https://cloudflare-dns.com/dns-query 
-    - https://dns.google/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
  
 # 出站
 pr: &pr {type: select, proxies: [✅ Static, 🇭🇰 Hong Kong, 🇹🇼 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
