@@ -24,7 +24,7 @@
   "dns": {
     "servers": [
       {"tag": "PublicDNS", "type": "udp", "server": "223.5.5.5"},
-	  {"tag": "LocalDNS", "type": "https", "server": "dns.alidns.com", "domain_resolver": "PublicDNS", "detour": "Direct"},
+	  {"tag": "LocalDNS", "type": "https", "server": "dns.alidns.com", "domain_resolver": "PublicDNS"},
 	  {"tag": "ProxyDNS", "type": "https", "server": "dns.google", "domain_resolver": "PublicDNS", "detour": "Static"}
     ],
     "rules": [
