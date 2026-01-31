@@ -19,9 +19,8 @@
 
   "dns": {
     "servers": [
-      {"tag": "PublicDNS", "type": "udp", "server": "223.5.5.5"},
-	  {"tag": "LocalDNS", "type": "https", "server": "dns.alidns.com", "domain_resolver": "PublicDNS", "detour": "Direct"},
-	  {"tag": "ProxyDNS", "type": "https", "server": "dns.google", "domain_resolver": "PublicDNS", "detour": "✅ Static"}
+      {"tag": "LocalDNS", "type": "udp", "server": "223.5.5.5"},
+	  {"tag": "ProxyDNS", "type": "https", "server": "dns.google", "domain_resolver": "LocalDNS", "detour": "✅ Static"}
     ],
     "rules": [
       {"clash_mode": "Direct", "server": "LocalDNS"},
@@ -131,6 +130,6 @@
     ],
 	"final": "🐟 Final",
 	"auto_detect_interface": true,
-	"default_domain_resolver": {"server": "PublicDNS"}
+	"default_domain_resolver": {"server": "LocalDNS"}
   }
 }
