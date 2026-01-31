@@ -74,14 +74,14 @@ dns:
     - "+.services.googleapis.cn"
     - "+.xn--ngstr-lra8j.com"
   default-nameserver:
-    - https://223.5.5.5/dns-query
-    - https://1.12.12.12/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
   proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
  
 # 出站
 pr: &pr {type: select, proxies: [✅ Static, 🇭🇰 Hong Kong, 🇹🇼 Tai Wan, 🇸🇬 Singapore, 🇯🇵 Japan, 🇰🇷 Korea, 🇺🇲 United States, 🎯 Proxy, DIRECT]}
