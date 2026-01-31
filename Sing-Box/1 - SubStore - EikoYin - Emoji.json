@@ -23,8 +23,7 @@
 
   "dns": {
     "servers": [
-      {"tag": "PublicDNS", "type": "udp", "server": "223.5.5.5"},
-	  {"tag": "LocalDNS", "type": "https", "server": "dns.alidns.com", "domain_resolver": "PublicDNS", "detour": "Direct"},
+      {"tag": "LocalDNS", "type": "udp", "server": "223.5.5.5"},
 	  {"tag": "ProxyDNS", "type": "https", "server": "dns.google", "domain_resolver": "PublicDNS", "detour": "✅ Static"}
     ],
     "rules": [
@@ -169,6 +168,6 @@
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "✅ Static"}
     ],
 	"final": "🐟 Final",
-	"default_domain_resolver": {"server": "PublicDNS"}
+	"default_domain_resolver": {"server": "LocalDNS"}
   }
 }
