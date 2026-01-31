@@ -23,7 +23,7 @@
 
   "dns": {
     "servers": [
-      {"tag": "PublicDNS", "type": "udp", "server": "223.5.5.5"},
+      {"tag": "LocalDNS", "type": "udp", "server": "223.5.5.5"},
 	  {"tag": "ProxyDNS", "type": "https", "server": "dns.google", "domain_resolver": "LocalDNS", "detour": "✅ Static"}
     ],
     "rules": [
