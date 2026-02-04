@@ -138,7 +138,6 @@ rules:
   - RULE-SET,playstation_domain,🎮 Game
   - RULE-SET,nintendo_domain,🎮 Game
   - RULE-SET,xbox_domain,🎮 Game
-  - RULE-SET,yandex_domain,🔍️ Yandex
   - RULE-SET,google_domain,📢 Google
   - RULE-SET,microsoft_domain,🪟 Microsoft
   - RULE-SET,apple_domain,🍎 Apple
