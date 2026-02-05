@@ -105,7 +105,7 @@
     {"tag": "Japan", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["日|JP|Japan"]}], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
     {"tag": "Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["韩|KR|Korea"]}], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
     {"tag": "United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["美|US|States|America"]}], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    {"tag": "GLOBAL", "type": "selector", "outbounds": ["Static", "Speed Test", "Proxy", "AI", "GitHub", "Telegram", "TikTok", "Bilibili", "YouTube", "Netflix", "Spotify", "Game", "Yandex", "Google", "Microsoft", "Apple", "Final", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Direct"]},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["Static", "Speed Test", "Proxy", "AI", "GitHub", "Telegram", "TikTok", "Bilibili", "YouTube", "Netflix", "Spotify", "Game", "Google", "Microsoft", "Apple", "Final", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Direct"]},
     {"tag": "Direct", "type": "direct"}
   ],
   
