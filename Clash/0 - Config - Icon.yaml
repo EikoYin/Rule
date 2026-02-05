@@ -133,10 +133,16 @@ rules:
   - RULE-SET,private_domain,DIRECT
   - RULE-SET,ai_domain,AI
   - RULE-SET,github_domain,GitHub
+  - RULE-SET,telegram_domain,Telegram
+  - RULE-SET,tiktok_domain,TikTok
+  - RULE-SET,bilibili_domain,Bilibili
   - RULE-SET,youtube_domain,YouTube
   - RULE-SET,netflix_domain,Netflix
   - RULE-SET,spotify_domain,Spotify
   - RULE-SET,steam_domain,Game 
+  - RULE-SET,epicgames_domain,Game
+  - RULE-SET,ea_domain,Game
+  - RULE-SET,blizzard_domain,Game
   - RULE-SET,playstation_domain,Game
   - RULE-SET,nintendo_domain,Game
   - RULE-SET,xbox_domain,Game
@@ -146,6 +152,8 @@ rules:
   - RULE-SET,gfw_domain,Static
   - RULE-SET,geolocation-!cn_domain,Static
   - RULE-SET,cn_domain,DIRECT
+  - RULE-SET,telegram_ip,Telegram,no-resolve
+  - RULE-SET,bilibili_ip,Bilibili,no-resolve
   - RULE-SET,netflix_ip,Netflix,no-resolve
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,apple_ip,Apple,no-resolve
