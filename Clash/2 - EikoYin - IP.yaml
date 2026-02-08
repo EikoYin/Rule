@@ -1,0 +1,199 @@
+# 机场订阅
+proxy-providers:
+  AirPort:
+    url: "机场订阅"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: Direct
+
+# 节点信息
+proxies:
+  - {name: Direct, type: direct}    
+
+# 全局配置 
+port: 8080
+socks-port: 1080
+mixed-port: 7890
+redir-port: 7891
+tproxy-port: 7892
+allow-lan: true
+bind-address: "*"
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 控制面板
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: "/etc/nikki/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - "rule-set:private_domain,cn_domain"
+    - "Mijia Cloud"
+    - "dlg.io.mi.com"
+    - "+.apple.com"
+    - "+.push.apple.com"
+    - "+.wechat.com"
+    - "+.wechatapp.com"
+    - "+.qq.com"
+    - "+.qpic.cn"
+    - "+.vivox.com"
+    - "+.msftncsi.com"
+    - "+.msftconnecttest.com"
+
+# 入站  
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: false
+  auto-redirect: false
+  auto-detect-interface: false
+
+# DNS模块
+dns:
+  enable: true
+  cache-algorithm: arc
+  listen: 0.0.0.0:1053
+  ipv6: true
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - "rule-set:private_domain,cn_domain"
+    - "+.lan"
+    - "+.local"
+    - "+.services.googleapis.cn"
+    - "+.xn--ngstr-lra8j.com"
+    - "time.*.com"
+    - "+.pool.ntp.org"
+    - "+.ntp.tencent.com"
+    - "+.ntp1.aliyun.com"
+    - "+.ntp.ntsc.ac.cn"
+    - "+.cn.ntp.org.cn"
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  direct-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+ 
+# 出站
+pr: &pr {type: select, proxies: [Static, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Direct]}
+proxy-groups:
+  - {name: Static, type: select, proxies: [Speed Test, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"}
+  - {name: Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
+  - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(GB|Expire|Traffic|套餐|剩余|重置)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}
+  - {name: AI, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"}
+  - {name: GitHub, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"}
+  - {name: YouTube, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"}
+  - {name: Netflix, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png"}
+  - {name: Spotify, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"}
+  - {name: Game, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png"}
+  - {name: Google, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"}
+  - {name: Microsoft, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"}
+  - {name: Apple, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png"}
+  - {name: Final, type: select, proxies: [Static, Proxy, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"}
+  - {name: Hong Kong, type: fallback, interval: 300, url: "https://www.gstatic.com/generate_204", proxies: [Hong Kong - Select, Hong Kong - UrlTest], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"}
+  - {name: Tai Wan, type: fallback, interval: 300, url: "https://www.gstatic.com/generate_204", proxies: [Tai Wan - Select, Tai Wan - UrlTest], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"}
+  - {name: Singapore, type: fallback, interval: 300, url: "https://www.gstatic.com/generate_204", proxies: [Singapore - Select, Singapore - UrlTest], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"}
+  - {name: Japan, type: fallback, interval: 300, url: "https://www.gstatic.com/generate_204", proxies: [Japan - Select, Japan - UrlTest], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"}
+  - {name: Korea, type: fallback, interval: 300, url: "https://www.gstatic.com/generate_204", proxies: [Korea - Select, Korea - UrlTest], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"}
+  - {name: United States, type: fallback, interval: 300, url: "https://www.gstatic.com/generate_204", proxies: [United States - Select, United States - UrlTest], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"}
+  - {name: Hong Kong - Select, type: select, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"}
+  - {name: Tai Wan - Select, type: select, include-all: true, filter: "(?=.*(台|TW|(?i)Tai))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"}
+  - {name: Singapore - Select, type: select, include-all: true, filter: "(?=.*(新|SG|(?i)Singapore))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"}
+  - {name: Japan - Select, type: select, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"}
+  - {name: Korea - Select, type: select, include-all: true, filter: "(?=.*(韩|KR|(?i)Korea))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"}
+  - {name: United States - Select, type: select, include-all: true, filter: "(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"}
+  - {name: Hong Kong - UrlTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"}
+  - {name: Tai Wan - UrlTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"}
+  - {name: Singapore - UrlTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(新|SG|(?i)Singapore))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"}
+  - {name: Japan - UrlTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(日|JP|(?i)Japan))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"}
+  - {name: Korea - UrlTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(韩|KR|(?i)Korea))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"}
+  - {name: United States - UrlTest, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"}
+
+# 规则匹配
+rules:
+  - DOMAIN-SUFFIX, eikoyin.top, Direct
+  - SRC-IP-CIDR, 192.168.100.55/32, Direct
+  - SRC-IP-CIDR, 192.168.100.56/32, Direct
+  - RULE-SET, private_domain, Direct
+  - RULE-SET, ai_domain, AI
+  - RULE-SET, github_domain, GitHub
+  - RULE-SET, youtube_domain, YouTube
+  - RULE-SET, netflix_domain, Netflix
+  - RULE-SET, spotify_domain, Spotify
+  - RULE-SET, steam_domain, Game
+  - RULE-SET, playstation_domain, Game
+  - RULE-SET, nintendo_domain, Game
+  - RULE-SET, xbox_domain, Game
+  - RULE-SET, google_domain, Google
+  - RULE-SET, microsoft_domain, Microsoft
+  - RULE-SET, apple_domain, Apple
+  - RULE-SET, gfw_domain, Static
+  - RULE-SET, geolocation-!cn_domain, Static
+  - RULE-SET, cn_domain, Direct
+  - RULE-SET, netflix_ip, Netflix, no-resolve
+  - RULE-SET, google_ip, Google, no-resolve
+  - RULE-SET, apple_ip, Apple, no-resolve
+  - RULE-SET, cn_ip, Direct
+  - MATCH, Final
+
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+  private_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.mrs"}
+  ai_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
+  github_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/github.mrs"}
+  youtube_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs"}
+  netflix_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/netflix.mrs"}
+  spotify_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs"}
+  steam_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/steam.mrs"}
+  playstation_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/playstation.mrs"}
+  nintendo_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/nintendo.mrs"}
+  xbox_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/xbox.mrs"}
+  google_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs"}
+  microsoft_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs"}
+  apple_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple.mrs"}
+  gfw_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/gfw.mrs"}
+  geolocation-!cn_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
+  cn_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"}
+  netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/netflix.mrs"}
+  google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs"}
+  apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/apple.mrs"}
+  cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"}
