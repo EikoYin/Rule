@@ -1,0 +1,123 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "google",
+        "type": "udp",
+        "server": "8.8.8.8"
+      },
+      {
+        "tag": "cloudflare",
+        "type": "udp",
+        "server": "1.1.1.1"
+      }
+    ],
+    "rules": [
+      {
+        "query_type": "HTTPS",
+        "action": "reject"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "cloudflare"
+      }
+    ],
+    "final": "cloudflare",
+    "strategy": "prefer_ipv4"
+  },
+  "inbounds": [
+    {
+      "tag":"SS",
+      "type": "shadowsocks",
+      "listen": "::",
+      "listen_port": 80,
+      "method": "2022-blake3-aes-128-gcm",
+      "password": "WzlqL1gWDG6r2E0UaqvmfA==", // 执行 sing-box generate rand --base64 16 生成
+      "multiplex": {
+          "enabled": true
+      }
+    },
+    {
+      "tag":"VLESS-Vision-Reality",
+      "type":"vless",
+      "listen":"::",
+      "listen_port":443,
+      "users":[
+          {
+              "uuid":"b65bc998-b7e3-46cc-beb4-9fd6ab602a91", //  执行 sing-box generate uuid 生成
+              "flow":"xtls-rprx-vision"
+          }
+      ],
+      "tls":{
+          "enabled":true,
+          "server_name":"updates.cdn-apple.com",
+          "reality":{
+              "enabled":true,
+              "handshake":{
+                  "server":"updates.cdn-apple.com",
+                  "server_port":443
+              },
+              "private_key":"0HjIyswLpJkdUXi8qqS5ZKSMwbr3KPtGIYcrKJSNFk0", // 执行 sing-box generate reality-keypair 生成
+              "short_id":[
+                  "5b0ce90aa3e56379" // 执行 sing-box generate rand 8 --hex 生成
+              ]
+          }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "Direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "quic",
+          "dns"
+        ]
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "Direct"
+      }
+    ],
+    "final": "Direct",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "cloudflare"
+    }
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db"
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}
