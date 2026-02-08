@@ -1,0 +1,24 @@
+proxies:
+  - name: "SS"
+    dialer-proxy: Hong Kong
+    type: ss
+    server: "70.39.202.140"
+    port: 80
+    cipher: "2022-blake3-aes-128-gcm"
+    password: "WzlqL1gWDG6r2E0UaqvmfA=="
+    udp: true
+  - name: "VLESS-Vision-Reality"
+    type: vless
+    server: "70.39.202.140"
+    port: 443
+    udp: true
+    uuid: "b65bc998-b7e3-46cc-beb4-9fd6ab602a91"
+    flow: xtls-rprx-vision
+    packet-encoding: xudp
+    tls: true
+    servername: "updates.cdn-apple.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "isHHHncla_Fe6qfmqx9ttrxuieDSRmpVdQv3MRG8wEk"
+      short-id: "5b0ce90aa3e56379"
+    skip-cert-verify: false
