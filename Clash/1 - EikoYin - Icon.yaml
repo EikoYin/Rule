@@ -8,7 +8,11 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: DIRECT
+    proxy: Direct
+
+# 节点信息
+proxies:
+  - {name: Direct, type: direct}    
 
 # 全局配置 
 port: 8080
@@ -106,9 +110,9 @@ dns:
     - https://cloudflare-dns.com/dns-query
  
 # 出站
-pr: &pr {type: select, proxies: [Static, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, DIRECT]}
+pr: &pr {type: select, proxies: [Static, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Direct]}
 proxy-groups:
-  - {name: Static, type: select, proxies: [Speed Test, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, DIRECT], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"}
+  - {name: Static, type: select, proxies: [Speed Test, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"}
   - {name: Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
   - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(GB|Expire|Traffic|套餐|剩余|重置)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}
   - {name: AI, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"}
@@ -120,7 +124,7 @@ proxy-groups:
   - {name: Google, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"}
   - {name: Microsoft, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"}
   - {name: Apple, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png"}
-  - {name: Final, type: select, proxies: [Static, Proxy, DIRECT], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"}
+  - {name: Final, type: select, proxies: [Static, Proxy, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"}
   - {name: Hong Kong, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"}
   - {name: Tai Wan, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(台|TW|(?i)Tai))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"}
   - {name: Singapore, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(新|SG|(?i)Singapore))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"}
@@ -130,30 +134,30 @@ proxy-groups:
 
 # 规则匹配
 rules:
-  - DOMAIN-SUFFIX,eikoyin.top,DIRECT
-  - SRC-IP-CIDR,192.168.100.55/32,DIRECT
-  - SRC-IP-CIDR,192.168.100.56/32,DIRECT
-  - RULE-SET,private_domain,DIRECT
-  - RULE-SET,ai_domain,AI
-  - RULE-SET,github_domain,GitHub
-  - RULE-SET,youtube_domain,YouTube
-  - RULE-SET,netflix_domain,Netflix
-  - RULE-SET,spotify_domain,Spotify
-  - RULE-SET,steam_domain,Game
-  - RULE-SET,playstation_domain,Game
-  - RULE-SET,nintendo_domain,Game
-  - RULE-SET,xbox_domain,Game
-  - RULE-SET,google_domain,Google
-  - RULE-SET,microsoft_domain,Microsoft
-  - RULE-SET,apple_domain,Apple
-  - RULE-SET,gfw_domain,Static
-  - RULE-SET,geolocation-!cn_domain,Static
-  - RULE-SET,cn_domain,DIRECT
-  - RULE-SET,netflix_ip,Netflix,no-resolve
-  - RULE-SET,google_ip,Google,no-resolve
-  - RULE-SET,apple_ip,Apple,no-resolve
-  - RULE-SET,cn_ip,DIRECT
-  - MATCH,Final
+  - DOMAIN-SUFFIX, eikoyin.top, Direct
+  - SRC-IP-CIDR, 192.168.100.55/32, Direct
+  - SRC-IP-CIDR, 192.168.100.56/32, Direct
+  - RULE-SET, private_domain, Direct
+  - RULE-SET, ai_domain, AI
+  - RULE-SET, github_domain, GitHub
+  - RULE-SET, youtube_domain, YouTube
+  - RULE-SET, netflix_domain, Netflix
+  - RULE-SET, spotify_domain, Spotify
+  - RULE-SET, steam_domain, Game
+  - RULE-SET, playstation_domain, Game
+  - RULE-SET, nintendo_domain, Game
+  - RULE-SET, xbox_domain, Game
+  - RULE-SET, google_domain, Google
+  - RULE-SET, microsoft_domain, Microsoft
+  - RULE-SET, apple_domain, Apple
+  - RULE-SET, gfw_domain, Static
+  - RULE-SET, geolocation-!cn_domain, Static
+  - RULE-SET, cn_domain, Direct
+  - RULE-SET, netflix_ip, Netflix, no-resolve
+  - RULE-SET, google_ip, Google, no-resolve
+  - RULE-SET, apple_ip, Apple, no-resolve
+  - RULE-SET, cn_ip, Direct
+  - MATCH, Final
 
 # 规则集
 rule-anchor:
