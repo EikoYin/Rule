@@ -1,4 +1,19 @@
 {
+  "providers": [
+    {
+      "type": "remote",
+      "tag": "AirPort",
+      "health_check": {
+        "enabled": true,
+        "url": "https://www.gstatic.com/generate_204",
+        "interval": "5m",
+        "timeout": "3s"
+      },
+      "url": "订阅地址",
+      "download_detour": "Direct",
+      "update_interval": "24h"
+    }
+  ],
   "log": {
     "disabled": false,
     "level": "info",
