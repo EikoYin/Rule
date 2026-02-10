@@ -114,7 +114,8 @@ pr: &pr {type: select, proxies: [Static, Hong Kong, Tai Wan, Singapore, Japan, K
 proxy-groups:
   - {name: Static, type: select, proxies: [Speed Test, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Exit, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"}
   - {name: Speed Test, type: url-test, include-all: true, url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, filter: "(?=.*(港|HK|(?i)Hong))|(?=.*(台|TW|(?i)Tai))|(?=.*(新|SG|(?i)Singapore))|(?=.*(日|JP|(?i)Japan))|(?=.*(韩|KR|(?i)Korea))|(?=.*(美|US|(?i)States|America))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
-  - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date|Direct|DMIT)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}  - {name: Exit, type: select, include-all: true, filter: "(?=.*(DMIT))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png"}
+  - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date|Direct|DMIT)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}  
+  - {name: Exit, type: select, include-all: true, filter: "(?=.*(DMIT))", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Airport.png"}
   - {name: AI, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"}
   - {name: GitHub, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"}
   - {name: YouTube, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"}
