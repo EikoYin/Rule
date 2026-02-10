@@ -87,7 +87,7 @@
   "outbounds": [
     {"tag": "Static", "type": "selector", "outbounds": ["Speed Test", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Direct"]},
     {"tag": "Speed Test", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["港|HK|Hong|台|TW|Tai|新|SG|Singapore|日|JP|Japan|韩|KR|Korea|美|US|States|America"]}], "url": "http://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
-    {"tag": "Proxy", "type": "selector", "outbounds": ["{all}"]},
+    {"tag": "Proxy", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date|Direct|DMIT"]}]},
     {"tag": "AI", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Direct"]},
     {"tag": "GitHub", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Direct"]},
     {"tag": "YouTube", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Direct"]},
