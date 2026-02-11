@@ -122,6 +122,7 @@
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["Static", "Speed Test", "Proxy", "AI", "GitHub", "YouTube", "Netflix", "Spotify", "Game", "Google", "Microsoft", "Apple", "Final", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Direct"]},
     {"tag": "Direct", "type": "direct"}
   ],
+
   "route": {
     "rules": [
       {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
