@@ -34,7 +34,7 @@
       {"rule_set": ["geosite-gfw", "geosite-geolocation-!cn"], "server": "ProxyDNS"}
     ],
     "final": "ProxyDNS",
-	"strategy": "prefer_ipv4",
+	"strategy": "ipv4_only",
 	"independent_cache": true,
 	"reverse_mapping": true
   },
