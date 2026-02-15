@@ -113,7 +113,7 @@
 
   "route": {
     "rules": [
-      {"action": "sniff", "sniffer": ["http", "tls", "dns"]},
+      {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
