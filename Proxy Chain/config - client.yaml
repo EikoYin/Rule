@@ -1,6 +1,6 @@
 proxies:
   - name: "SS"
-    dialer-proxy: Hong Kong
+    dialer-proxy: Transfer
     type: ss
     server: "70.39.202.140"
     port: 80
