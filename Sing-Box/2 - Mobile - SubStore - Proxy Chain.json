@@ -26,7 +26,7 @@
       {"clash_mode": "Direct", "server": "LocalDNS"},
       {"clash_mode": "Global", "server": "ProxyDNS"},
 	  {"query_type": "HTTPS", "action": "reject"},
-      {"domain_suffix": ["eikoyin.top", "cdn-res-oss-cn-hongkong-aliyuncs-file.com"], "server": "LocalDNS"},
+      {"domain_suffix": "eikoyin.top", "server": "LocalDNS"},
       {"rule_set": ["geosite-private", "geosite-cn"], "server": "LocalDNS"},
       {"rule_set": ["geosite-gfw", "geosite-geolocation-!cn"], "server": "ProxyDNS"}
     ],
@@ -92,7 +92,7 @@
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
-      {"domain_suffix": ["eikoyin.top", "cdn-res-oss-cn-hongkong-aliyuncs-file.com"], "outbound": "Direct"}, 
+      {"domain_suffix": "eikoyin.top", "outbound": "Direct"}, 
       {"source_ip_cidr": ["192.168.100.55/32", "192.168.100.56/32"], "outbound": "Direct"},
       {"rule_set": "geosite-private", "outbound": "Direct"},
       {"rule_set": "geosite-ai", "outbound": "AI"},
