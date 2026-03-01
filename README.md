@@ -1,1 +1,1 @@
-Clash、Sing-Box等分流规则及Icon定制
+Clash、SingBox等分流规则及Icon定制
