@@ -136,6 +136,7 @@ proxy-groups:
 
 # 规则匹配
 rules:
+  - DOMAIN-SUFFIX, eiko.top, Direct
   - DOMAIN-SUFFIX, eikoyin.top, Direct
   - SRC-IP-CIDR, 192.168.100.55/32, Direct
   - SRC-IP-CIDR, 192.168.100.56/32, Direct
