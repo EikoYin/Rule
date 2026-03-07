@@ -7,7 +7,7 @@
 # 2. 修改 0.0.0.0
    "external_controller": "0.0.0.0:9090"→"external_controller": "127.0.0.1:9090"
 
-# 3. 修改 inbounds 如下
+# 3. 修改 inbounds
    "inbounds": [
    {
      "type": "tun",
