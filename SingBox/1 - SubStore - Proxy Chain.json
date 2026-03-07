@@ -167,6 +167,7 @@
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "Static"}
     ],
 	"final": "Final",
+	"auto_detect_interface": false,
 	"default_domain_resolver": {"server": "LocalDNS"}
   }
 }
