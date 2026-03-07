@@ -38,5 +38,5 @@
 # 4. 修改 rules
    {"inbound": "dns-in", "action": "hijack-dns"}→{"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"}
 
-# 5. 添加 auto_detect_interface
-   在"rule_set"的"final"下一行添加"auto_detect_interface": true
+# 5. 修改 rule_set
+   "auto_detect_interface": false→"auto_detect_interface": true
