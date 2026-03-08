@@ -1,4 +1,4 @@
-# 1. 删除路径
+# 1. 删除项目
 
 external-ui: "/etc/nikki/run/ui"
 
