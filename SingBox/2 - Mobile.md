@@ -1,9 +1,7 @@
 # 1. 删除路径
    "external_ui": "/etc/momo/run/ui"
 
-   "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
-
-   "external_ui_download_detour": "Direct"
+   "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
    "path": "/etc/momo/run/cache.db"
 
