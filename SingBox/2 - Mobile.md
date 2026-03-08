@@ -1,4 +1,4 @@
-# 1. 删除路径
+# 1. 删除项目
    "external_ui": "/etc/momo/run/ui"
 
    "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
