@@ -118,7 +118,7 @@
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"clash_mode": "Direct", "outbound": "Direct"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
-      {"rule_set": "geosite-private", "outbound": "Direct"},
+      {"rule_set": ["geoip-private", "geosite-private"], "outbound": "Direct"},
       {"rule_set": "geosite-ai", "outbound": "AI"},
       {"rule_set": "geosite-github", "outbound": "GitHub"},
       {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "Telegram"},
@@ -136,6 +136,7 @@
       {"rule_set": ["geosite-cn", "geoip-cn"], "outbound": "Direct"}
     ],
     "rule_set": [
+	  {"tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geoip/private.srs"},
       {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs"},
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs"},
       {"tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/github.srs"},
