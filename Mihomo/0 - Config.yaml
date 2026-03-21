@@ -6,7 +6,7 @@ proxy-providers:
     interval: 86400
     health-check:
       enable: true
-      url: https://cp.cloudflare.com/generate_204
+      url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: Direct
 
@@ -113,7 +113,7 @@ dns:
 pr: &pr {type: select, proxies: [Static, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Direct]}
 proxy-groups:
   - {name: Static, type: select, proxies: [Speed Test, Hong Kong, Tai Wan, Singapore, Japan, Korea, United States, Proxy, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static.png"}
-  - {name: Speed Test, type: url-test, include-all: true, filter: "(?=.*(港|HK|(?i)Hong|台|TW|(?i)Tai|新|SG|(?i)Singapore|日|JP|(?i)Japan|韩|KR|(?i)Korea|美|US|(?i)States|America))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
+  - {name: Speed Test, type: url-test, include-all: true, filter: "(?=.*(港|HK|(?i)Hong|台|TW|(?i)Tai|新|SG|(?i)Singapore|日|JP|(?i)Japan|韩|KR|(?i)Korea|美|US|(?i)States|America))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
   - {name: Proxy, type: select, include-all: true, filter: "(?=.*)^((?!(网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date|Direct)).)*$", icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"}
   - {name: AI, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"}
   - {name: GitHub, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"}
@@ -128,12 +128,12 @@ proxy-groups:
   - {name: Microsoft, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"}
   - {name: Apple, <<: *pr, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png"}
   - {name: Final, type: select, proxies: [Static, Proxy, Direct], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"}
-  - {name: Hong Kong, type: url-test, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"}
-  - {name: Tai Wan, type: url-test, include-all: true, filter: "(?=.*(台|TW|(?i)Tai))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"}
-  - {name: Singapore, type: url-test, include-all: true, filter: "(?=.*(新|SG|(?i)Singapore))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"}
-  - {name: Japan, type: url-test, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"}
-  - {name: Korea, type: url-test, include-all: true, filter: "(?=.*(韩|KR|(?i)Korea))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"}
-  - {name: United States, type: url-test, include-all: true, filter: "(?=.*(美|US|(?i)States|America))", url: "https://cp.cloudflare.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"}
+  - {name: Hong Kong, type: url-test, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"}
+  - {name: Tai Wan, type: url-test, include-all: true, filter: "(?=.*(台|TW|(?i)Tai))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"}
+  - {name: Singapore, type: url-test, include-all: true, filter: "(?=.*(新|SG|(?i)Singapore))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"}
+  - {name: Japan, type: url-test, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"}
+  - {name: Korea, type: url-test, include-all: true, filter: "(?=.*(韩|KR|(?i)Korea))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png"}
+  - {name: United States, type: url-test, include-all: true, filter: "(?=.*(美|US|(?i)States|America))", url: "https://www.gstatic.com/generate_204", interval: 300, tolerance: 20, icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"}
 
 # 规则匹配
 rules:
