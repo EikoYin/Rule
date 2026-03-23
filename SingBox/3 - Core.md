@@ -21,7 +21,7 @@
     },
     {
       "type": "mixed",
-      "listen": "0.0.0.0",
+      "listen": "::",
       "listen_port": 7890
     }
   ],
