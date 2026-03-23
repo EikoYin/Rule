@@ -1,14 +1,14 @@
 # 1. 删除项目
 
-   "external_ui": "/etc/momo/run/ui"
+"external_ui": "/etc/momo/run/ui"
 
-   "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
+"external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
-   "path": "/etc/momo/run/cache.db"
+"path": "/etc/momo/run/cache.db"
 
 # 2. 修改 0.0.0.0
 
-   "external_controller": "0.0.0.0:9090"→"external_controller": "127.0.0.1:9090"
+"external_controller": "0.0.0.0:9090"→"external_controller": "127.0.0.1:9090"
 
 # 3. 修改 inbounds
 
@@ -38,8 +38,8 @@
 
 # 4. 修改 rules
 
-   {"inbound": "dns-in", "action": "hijack-dns"}→{"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"}
+{"inbound": "dns-in", "action": "hijack-dns"}→{"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"}
 
 # 5. 修改 rule_set
 
-   "auto_detect_interface": false→"auto_detect_interface": true
+"auto_detect_interface": false→"auto_detect_interface": true
