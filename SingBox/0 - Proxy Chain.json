@@ -89,6 +89,7 @@
 	{"tag": "Exit", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["VPS"]}]},
     {"tag": "AI", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Exit", "Direct"]},
     {"tag": "GitHub", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Exit", "Direct"]},
+	{"tag": "OneDrive", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Exit", "Direct"]},
 	{"tag": "Telegram", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Exit", "Direct"]},
     {"tag": "TikTok", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Exit", "Direct"]},
     {"tag": "Bilibili", "type": "selector", "outbounds": ["Static", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Proxy", "Exit", "Direct"]},
@@ -107,7 +108,7 @@
     {"tag": "Korea", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["韩|KR|Korea"]}, {"action": "exclude", "keywords": ["VPS"]}], "url": "https://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
     {"tag": "United States", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["美|US|States|America"]}, {"action": "exclude", "keywords": ["VPS"]}], "url": "https://www.gstatic.com/generate_204", "interval": "5m", "tolerance": 20},
 	{"tag": "Transfer", "type": "selector", "outbounds": ["Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States"]},
-    {"tag": "GLOBAL", "type": "selector", "outbounds": ["Static", "Speed Test", "Proxy", "Exit", "AI", "GitHub", "Telegram", "TikTok", "Bilibili", "YouTube", "Netflix", "Spotify", "Game", "Google", "Microsoft", "Apple", "Final", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Transfer", "Direct"]},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["Static", "Speed Test", "Proxy", "Exit", "AI", "GitHub", "OneDrive", "Telegram", "TikTok", "Bilibili", "YouTube", "Netflix", "Spotify", "Game", "Google", "Microsoft", "Apple", "Final", "Hong Kong", "Tai Wan", "Singapore", "Japan", "Korea", "United States", "Transfer", "Direct"]},
     {"tag": "Direct", "type": "direct"}
   ],
 
@@ -120,6 +121,7 @@
       {"rule_set": ["geoip-private", "geosite-private"], "outbound": "Direct"},
       {"rule_set": "geosite-ai", "outbound": "AI"},
       {"rule_set": "geosite-github", "outbound": "GitHub"},
+	  {"rule_set": "geosite-onedrive", "outbound": "OneDrive"},
       {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "Telegram"},
       {"rule_set": "geosite-tiktok", "outbound": "TikTok"},
       {"rule_set": ["geosite-bilibili", "geoip-bilibili"], "outbound": "Bilibili"},
@@ -139,6 +141,7 @@
       {"tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/private.srs"},
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-ai-!cn.srs"},
       {"tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/github.srs"},
+	  {"tag": "geosite-onedrive", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/onedrive.srs"},
       {"tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/telegram.srs"},
       {"tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/tiktok.srs"},
       {"tag": "geosite-bilibili", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/bilibili.srs"},
