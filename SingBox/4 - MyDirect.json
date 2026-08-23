@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "cf.xiu2.xyz"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "eiko.top",
+        "eikoyin.top",
+        "hdsky.me",
+        "m-team.cc",
+        "ptchdbits.co",
+        "rainbowisland.co",
+        "chdbits.xyz",
+        "totheglory.im",
+        "ourbits.club",
+        "springsunday.net",
+        "pterclub.net",
+		"keepfrds.com",
+		"audiences.me",
+		"cinefiles.info",
+		"hhanclub.net",
+		"hdhome.org",
+        "open.cd"
+      ]
+    },
+    {
+      "source_ip_cidr": [
+        "192.168.100.55/32",
+        "192.168.100.56/32"
+      ]
+    }
+  ]
+}
