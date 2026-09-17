@@ -3,7 +3,6 @@ DOMAIN-SUFFIX, eikoyin.top
 SRC-IP-CIDR, 192.168.100.55/32
 SRC-IP-CIDR, 192.168.100.56/32
 DOMAIN, cf.xiu2.xyz
-DOMAIN-SUFFIX, deepseek.com
 DOMAIN-SUFFIX, hdsky.me
 DOMAIN-SUFFIX, m-team.cc
 DOMAIN-SUFFIX, ptchdbits.co
